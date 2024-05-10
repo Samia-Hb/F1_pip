@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:48:12 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/03 15:14:35 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:20:47 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*check_str(char *s1, char *s2, char *s3)
 	if (s1 && !s2 && !s3)
 		return (ft_strdup(s1));
 	if (!s1 && !s1 && s3)
-		return(ft_strdup(s3));
+		return (ft_strdup(s3));
 	return (NULL);
 }
 
@@ -46,7 +46,7 @@ char	*ft_strjoin(char *s1, char *s2, char *s3)
 		new[i++] = s2[j++];
 	}
 	j = 0;
-	while(s3[j])
+	while (s3[j])
 		new[i++] = s3[j++];
 	new[i] = '\0';
 	return (new);

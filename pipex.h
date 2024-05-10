@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 01:23:19 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/04 00:37:15 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:13:11 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void    execute_commands(char *cmd1, char *cmd2, char *infile, char *outfile,cha
 char    **arr(char *cmd);
 void    ft_clean (char **arr1, char **arr2);
 void    remove_string(char **str);
+int     check_param(char *infile, char *cmd1, char *cmd2, char **envp);
+int     check_full_command(char *cmd);
 #endif

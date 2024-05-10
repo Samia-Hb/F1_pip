@@ -6,11 +6,12 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:03:44 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/03 10:37:47 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/05/10 10:19:11 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -20,6 +21,7 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
 static int	count_len(char *s, char c, int *i)
 {
 	int	count;
@@ -36,32 +38,6 @@ static int	count_len(char *s, char c, int *i)
 		*i = *i + 1;
 	}
 	return (count);
-}
-
-int	ft_counter(char *str, char c)
-{
-	int	i;
-	int	word_counter;
-
-	i = 0;
-	word_counter = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-		{
-			word_counter++;
-			while (str[i + 1] == c)
-			{
-				i++;
-			}
-		}
-		i++;
-	}
-	if (str[0] != c && str[ft_strlen(str) - 1] != c)
-		word_counter++;
-	if (str[0] == c && str[ft_strlen(str) - 1] == c)
-		word_counter--;
-	return (word_counter);
 }
 
 static char	**ft_allocation(char *s, char c)
