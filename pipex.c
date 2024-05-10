@@ -6,12 +6,11 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:35:00 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/04 00:36:35 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/05/09 22:43:53 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
 
 void execute_cmd1(int pipe_fd_0, int pipe_fd_1, char *cmd1, char *infile, char **envp)
 {
@@ -33,7 +32,7 @@ void execute_cmd1(int pipe_fd_0, int pipe_fd_1, char *cmd1, char *infile, char *
     close(infile_fd);
     new_arr = arr(cmd1);
     command_path = get_executable(new_arr[0], find_path(envp));
-    execve(command_path,new_arr,envp);
+    execve(command_path,new_arr,envp); // to be handeled
     remove_string(new_arr);
     exit(1);//get out of the process
 }
@@ -68,23 +67,26 @@ void norm(int pipe_fd_0, int pipe_fd_1,int pid1,int pid2)
 }
 void execute_commands(char *cmd1, char *cmd2, char *infile, char *outfile,char **envp)
 {
-    int pipefd[2];
+    int	pipefd[2];
+    int	pid1;
+	int pid2;
+
     if (pipe(pipefd) == -1)
     {
         perror("pipe");
         exit(1);
     }
-    int pid1 = fork();
+    pid1 = fork();
     if (pid1 == -1)
     {
         perror("fork");
         exit(1);
     }
-    else if(pid1 == 0)
+    else if (pid1 == 0)
         execute_cmd1(pipefd[0], pipefd[1], cmd1, infile, envp); 
     else
     {
-        int pid2 = fork();
+        pid2 = fork();
         if (pid2 == -1) 
         {
             perror("fork");
