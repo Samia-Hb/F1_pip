@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shebaz <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 10:13:21 by shebaz            #+#    #+#             */
-/*   Updated: 2023/11/18 10:44:24 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/05/19 08:39:11 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_strlcpy(char *dst, char *src, int dstsize)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (dstsize > 0)

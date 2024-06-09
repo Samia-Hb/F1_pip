@@ -6,21 +6,11 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:03:44 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/10 10:19:11 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/05/20 21:57:35 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 static int	count_len(char *s, char c, int *i)
 {
@@ -32,7 +22,7 @@ static int	count_len(char *s, char c, int *i)
 	while (s[*i])
 	{
 		if (s[*i] != c)
-			count ++;
+			count++;
 		if (s[*i] == c)
 			return (count);
 		*i = *i + 1;
@@ -66,6 +56,35 @@ static char	**ft_allocation(char *s, char c)
 	return (strings);
 }
 
+char	**check_arr(char **old)
+{
+	int		i;
+	int		length;
+	char	**s;
+	int		j;
+
+	length = 0;
+	while (old[length])
+		length++;
+	s = malloc((length + 1) * sizeof(char *));
+	i = 0;
+	while (i < length)
+	{
+		s[i] = ft_strdup(old[i]);
+		if (!s[i])
+		{
+			j = 0;
+			while (j++ < i)
+				free(s[j]);
+			free(s);
+			return (NULL);
+		}
+		i++;
+	}
+	s[length] = NULL;
+	return (trim_string(s, old));
+}
+
 static char	**ft_copy(char **strings, char *s, char c)
 {
 	int	k;
@@ -89,6 +108,7 @@ static char	**ft_copy(char **strings, char *s, char c)
 		k++;
 	}
 	strings[k] = NULL;
+	strings = check_arr(strings);
 	return (strings);
 }
 
