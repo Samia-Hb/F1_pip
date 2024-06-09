@@ -6,13 +6,13 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:29:39 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/20 15:58:52 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/09 13:47:17 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	**empty_case(char **arr) //work
+char	**empty_case(char **arr)
 {
 	if (!arr[0])
 	{
@@ -24,7 +24,7 @@ char	**empty_case(char **arr) //work
 	return (arr);
 }
 
-void	first_part(char *infile, char **arr2, char *cmd2, char **envp) //done
+void	first_part(char *infile, char **arr2, char *cmd2, char **envp)
 {
 	char	*result;
 
@@ -38,7 +38,7 @@ void	first_part(char *infile, char **arr2, char *cmd2, char **envp) //done
 		free(result);
 }
 
-void	second_part(char *cmd1, char *cmd2, char **envp, int *count) //done
+void	second_part(char *cmd1, char *cmd2, char **envp, int *count)
 {
 	char	*result;
 	char	**arr1;
@@ -75,8 +75,8 @@ int	check_param(char *infile, char *cmd1, char *cmd2, char **envp)
 	char	**arr2;
 
 	count = 1;
-	arr2 = ft_split(cmd2, ' ');
 	arr1 = ft_split(cmd1, ' ');
+	arr2 = ft_split(cmd2, ' ');
 	arr1 = empty_case(arr1);
 	arr2 = empty_case(arr2);
 	result1 = get_executable(arr1[0], find_path(envp));
@@ -95,7 +95,7 @@ int	check_param(char *infile, char *cmd1, char *cmd2, char **envp)
 	return (count);
 }
 
-int	main(int argc, char **argv, char **envp) //work
+int	main(int argc, char **argv, char **envp)
 {
 	if (!envp)
 		return (0);
@@ -106,6 +106,6 @@ int	main(int argc, char **argv, char **envp) //work
 		execute_commands(argv, envp);
 	}
 	else
-		ft_printf("zsh: parse error near `\\n' \n");
+		multiple_pipe(argc, argv, envp);
 	return (0);
 }

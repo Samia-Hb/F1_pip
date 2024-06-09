@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 01:23:19 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/20 11:11:22 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/09 15:33:00 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	remove_string(char **str);
 int		check_param(char *infile, char *cmd1, char *cmd2, char **envp);
 int		check_full_command(char *cmd);
 void	norm(int pipe_fd_0, int pipe_fd_1, int pid1, int pid2);
+void	multiple_pipe(int argc,char **argv, char **envp);
 #endif

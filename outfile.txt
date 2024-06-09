@@ -1,1 +1,13 @@
-16
+bonus
+ft_printf
+infile.txt
+libft
+main.c
+Makefile
+multiple_pipe.c
+outfile.txt
+parsing.c
+pipex
+pipex.c
+pipex.h
+pipex_utils.c
