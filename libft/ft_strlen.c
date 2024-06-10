@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:47:15 by shebaz            #+#    #+#             */
-/*   Updated: 2024/05/20 21:58:21 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/10 11:10:14 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ char	**trim_string(char **s, char **old)
 	return (s);
 }
 
-int	ft_strlen(char *s)
-{
-	int	i;
+// int	ft_strlen(char *s)
+// {
+// 	int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }

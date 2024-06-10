@@ -12,10 +12,10 @@
 
 #include "pipex.h"
 
-void	check_cmds(char **arr) //done
+void	check_cmds(char **arr) // done
 {
-	int		i;
-	char	cmp;
+	int i;
+	char cmp;
 
 	i = 0;
 	cmp = 39;
@@ -27,10 +27,10 @@ void	check_cmds(char **arr) //done
 	}
 }
 
-char	*find_path(char **envp) //work
+char	*find_path(char **envp) // work
 {
-	char	*path_env;
-	int		i;
+	char *path_env;
+	int i;
 
 	if (!envp)
 		return (0);
@@ -48,9 +48,9 @@ char	*find_path(char **envp) //work
 	return (path_env);
 }
 
-int	check_command(char *cmd) //work
+int	check_command(char *cmd) // work
 {
-	char	**arr;
+	char **arr;
 
 	arr = ft_split(cmd, ' ');
 	if (access(arr[0], X_OK) == 0)
@@ -62,10 +62,10 @@ int	check_command(char *cmd) //work
 	return (0);
 }
 
-char	*find_command_path(char **dir, char *command) //work
+char	*find_command_path(char **dir, char *command) // work
 {
-	char	*full_path;
-	int		i;
+	char *full_path;
+	int i;
 
 	i = 0;
 	while (dir[i])
@@ -91,11 +91,11 @@ char	*find_command_path(char **dir, char *command) //work
 	return (NULL);
 }
 
-char	*get_executable(char *command, char *path) //work
+char	*get_executable(char *command, char *path) // work
 {
-	char	*command_path;
-	char	**dir;
-	char	**arr;
+	char *command_path;
+	char **dir;
+	char **arr;
 
 	arr = ft_split(command, ' ');
 	if (!ft_counter(command, ' ') || !ft_strlen(command))

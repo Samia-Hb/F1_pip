@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 01:23:19 by shebaz            #+#    #+#             */
-/*   Updated: 2024/06/09 15:33:00 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/10 10:15:25 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PIPEX_H
 
 # include "ft_printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 # include "libft/libft.h"
 # include <errno.h>
 # include <fcntl.h>

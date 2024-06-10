@@ -12,10 +12,10 @@
 
 #include "pipex.h"
 
-int	ft_counter(char *str, char c) //work
+int	ft_counter(char *str, char c) // work
 {
-	int	i;
-	int	word_counter;
+	int i;
+	int word_counter;
 
 	i = 0;
 	word_counter = 0;
@@ -38,9 +38,9 @@ int	ft_counter(char *str, char c) //work
 	return (word_counter);
 }
 
-void	remove_string(char **str) //work
+void	remove_string(char **str) // work
 {
-	int	i;
+	int i;
 
 	i = 0;
 	if (!str)
@@ -53,19 +53,19 @@ void	remove_string(char **str) //work
 	free(str);
 }
 
-int	check_full_command(char *cmd) //work
+int	check_full_command(char *cmd) // work
 {
 	if (cmd[0] == 39 && cmd[strlen(cmd) - 1] == 39)
 		return (-4);
 	return (1);
 }
 
-char	**arr(char *cmd) //work
+char	**arr(char *cmd) // work
 {
-	int		arr_count;
-	int		i;
-	char	**arr;
-	char	**new_arr;
+	int arr_count;
+	int i;
+	char **arr;
+	char **new_arr;
 
 	arr = ft_split(cmd, ' ');
 	i = 0;
