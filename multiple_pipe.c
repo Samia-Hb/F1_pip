@@ -6,7 +6,7 @@
 /*   By: shebaz <shebaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 14:20:07 by shebaz            #+#    #+#             */
-/*   Updated: 2024/06/10 14:59:11 by shebaz           ###   ########.fr       */
+/*   Updated: 2024/06/11 14:41:40 by shebaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,8 +162,28 @@ void parsing(int argc, char **argv, char **envp)
     free(map->map);
     free(map);
 }
-
+/////////////////Execute command
+char	*execute_command(int argc, char **argv, char **envp)
+{
+	int	pipe_fd[pow(2, )];
+	int	fd;
+	int	pid = fork();
+	if(pid == 0)
+		execute_cmd1(pipe_fd[0], pipe_fd[1], argv, envp);
+	else if(pid > 0)
+		execute_cmd2(pipe_fd[0],pipe_fd[1], argv, envp);
+	else
+		perror("Error\n");
+	fd = open(argv[1], O_RDWR, 0777);
+	if (fd == -1)
+		return (NULL);	
+}
 void	multiple_pipe(int argc, char **argv, char **envp)
 {
-	parsing(argc, argv, envp);	
+	
+	parsing(argc, argv, envp);
+	printf("command number = %d\n", argc - 3);
+	execute_command(argc, argv, envp);
+	argc--;
 }
+//pipe_nbr = argc - 4
